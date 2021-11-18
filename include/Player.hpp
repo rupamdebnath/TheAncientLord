@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 using namespace std;
 
 class Player
@@ -59,7 +60,6 @@ class Hero : public Player
     this->health = health;
     this->mDamage = mDamage;
   }
-
 };
 
 class Rakshasa : public Player
