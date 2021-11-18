@@ -1,5 +1,5 @@
 #include <iostream>
-// #include "input.hpp"
+#include "input.hpp"
 
 int main(int argc, char **argv) {
 	std::cout << "Hello world!" << std::endl;
