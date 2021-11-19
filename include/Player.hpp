@@ -130,8 +130,8 @@ class Player
 
     }
   }
-
   //virtual functions for different abilities based on characters
+  virtual void Reset() = 0;
   virtual void SpecialAbility() = 0;
   virtual void SpecialAbility(Player *player) = 0;
   //virtual void Heal() = 0;
@@ -149,6 +149,10 @@ class Hero : public Player
   ~Hero()
   {
     cout << "Sorry, you are dead, you can reset the game and try again" << endl;
+  }
+  void Reset()
+  {
+    health = 150;
   }
   void SpecialAbility(){}
   void SpecialAbility(Player *player)
@@ -168,6 +172,10 @@ class Rakshasa : public Player
     mDamage = 10;
     this->name = name;
   }
+  void Reset()
+  {
+    health = 80;
+  }
   void SpecialAbility(){}
   void SpecialAbility(Player *player){}
 
@@ -183,6 +191,10 @@ class Tataka : public Player
     rDamage = 0;
     shield = random(0, 10);
     this->name = name;
+  }
+  void Reset()
+  {
+    health = 100;
   }
   void SpecialAbility()
   {

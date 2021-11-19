@@ -61,7 +61,11 @@ int main(int argc, char *argv[]) {
     cout << "Oops you died. Do you want to retry this level? (y/n)\n" << endl;
     cin >> c;
     if (c == 'y')
-    goto PlayLevel1;
+    {
+      player1->Reset();
+      player2->Reset();
+      goto PlayLevel1;
+    }
   }
   else
   {  
