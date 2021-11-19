@@ -3,7 +3,7 @@
 #include "/home/runner/TheAncientLord/include/Player.hpp"
 using namespace std;
 
-unique_ptr<Player> player1{ new Hero("Rama", 150, 20)}; 
+Player *player1 = new Hero("Rama", 150, 30); 
 
 //Menu class for displaying statistics and storyline
 class Menu
@@ -53,8 +53,8 @@ class Menu
    
     cout << "=======================" << endl;  
     cout << "\nA: Punch Left and right \U0001F91C \U0001F91B" << endl;
-    cout << "\nD: Defend this turn by folding your arms \U0001F64F	" << endl;
-    cout << "\nW: Move Back and throw a boomerang \U0001FA83 from a range in this turn \U0001FA83 50% probability that enemy will miss next turn" << endl;
+    cout << "\nD: Heal some health by folding your arms \U0001F64F in the range of 0 to 10 randomly.." << endl;
+    cout << "\nW: Move Back and throw a boomerang \U0001FA83 from a range in this turn with a 50% probability that enemy will miss next turn, you will need the boomerang weapon from Tataka to activate this." << endl;
     cout << "\nS: Use your special ability this turn \U0001F3F9 Needs the Bow and arrow weapon and can only be used 3 times in one level" << endl;
     cout << "\nESC: Force Quit the Game!! \U0001F97A" << endl;
     cout << "Your turn: " << endl;
@@ -71,9 +71,9 @@ class Menu
 
   void ShowLevel1()
   {
-    cout << "Starting First Level: .......\nYou make the long journey through the forest. But suddenly a demon named Tataka appears \U0001f9db who lives in the Dark Valleys of this forest.\n---------------------------------\nMitra: Tataka was a beautiful woman who was transformed into a demon (rakshasi) when she tried to seduce the rishi Agastya. As a demon, she drinks the blood of living creatures and kills anything she can see.\nShe has a health of 100 and melee damage of 20. She can randomly either defend or attack you each turn!!\nHer special ability : she can drink blood of animals to restore health every turn as well!!" << endl;
+    cout << "Starting Level 1: .......\nYou make the long journey through the forest. But suddenly a demon named Tataka appears \U0001f9db who lives in the Dark Valleys of this forest.\n---------------------------------\nMitra: Tataka was a beautiful woman who was transformed into a demon (rakshasi) when she tried to seduce the rishi Agastya. As a demon, she drinks the blood of living creatures and kills anything she can see.\nShe has a health of 100 and melee damage of 35. She can randomly either defend or attack you each turn!!\nHer special ability : she can drink blood of animals to restore health every turn as well!!" << endl;
     sleep(2);
-    cout << "Tataka: \U0001F5e3 Hello Rama, Today is the day I shall drink your blood..\n\n" << endl;
+    cout << "Tataka: \U0001F5e3 He He he ! Who do we have here... Mister Rama, Today is the day I shall drink your blood..\n\n" << endl;
     sleep(2);
   }
 
