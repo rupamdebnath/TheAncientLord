@@ -1,8 +1,7 @@
 #include <iostream>
 #include <memory>
-#include <Menu.hpp>
-#include <input.hpp>
-//#include "/home/runner/TheAncientLord/include/Level.hpp"
+#include "../include/Menu.hpp"
+#include "../include/input.hpp"
 
 using namespace std;
 char c;

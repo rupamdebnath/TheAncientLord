@@ -1,8 +1,20 @@
 #include <iostream>
 #include <unistd.h>
-//#include "/home/runner/TheAncientLord/include/Menu.hpp"
+
 using namespace std;
 
+//writing a randoim function for the abilities of characters
+int random(int min, int max) //range : [min, max]
+{
+  bool first = true;
+  if (first) 
+  {  
+    srand(time(NULL)); //seeding for the first time only!
+    first = false;
+  }
+  int _value = min + rand() % (( max + 1 ) - min);
+  return _value;
+}
 
 //The Base class Player from which all the other characters will be inherited
 class Player

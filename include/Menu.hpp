@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
-#include "/home/runner/TheAncientLord/include/Player.hpp"
+//#include "/home/runner/TheAncientLord/include/Player.hpp"
+#include "../include/Level.hpp"
 using namespace std;
 
 Player *player1 = new Hero("Rama", 150, 30); 

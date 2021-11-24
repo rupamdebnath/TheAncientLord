@@ -1,21 +1,6 @@
 #include <iostream>
-// #include "/home/runner/TheAncientLord/include/Player.hpp"
-// #include "/home/runner/TheAncientLord/include/Menu.hpp"
-#include <home/Player.hpp>
-#include <home/Menu.hpp>
 
-//writing a randoim function for the abilities of characters
-int random(int min, int max) //range : [min, max]
-{
-  bool first = true;
-  if (first) 
-  {  
-    srand(time(NULL)); //seeding for the first time only!
-    first = false;
-  }
-  int _value = min + rand() % (( max + 1 ) - min);
-  return _value;
-}
+#include "../include/Player.hpp"
 
 class Level
 {
