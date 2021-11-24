@@ -36,7 +36,7 @@ class Menu
     sleep(1);
     cout << "Your health has increased to 150. You decide to fight your way up to Ravana..\nYou: OK Mitra, thank you for your help, I will go to Lanka and rescue my wife.." << endl;
     sleep(1);
-    cout << "Mitra: Good Luck!! I will be whispering in your ear every step of the way to help you.." << endl;
+    cout << "Mitra: Good Luck!! I will be whispering in your ear every step of the way to help you. Remember your health or abilities will increase with each level, and also be rewarded with new weapons.." << endl;
     cout << "============================END OF PROLOGUE=====================" << endl;
     sleep(2);
     cout << "=========================================================================" << endl;
@@ -54,7 +54,7 @@ class Menu
     cout << "=======================" << endl;  
     cout << "\nA: Punch Left and right \U0001F91C \U0001F91B" << endl;
     cout << "\nD: Heal some health by folding your arms \U0001F64F in the range of 0 to 10 randomly.." << endl;
-    cout << "\nW: Move Back and throw a boomerang \U0001FA83 from a range in this turn with a 50% probability that enemy will miss next turn, you will need the boomerang weapon from Tataka to activate this." << endl;
+    cout << "\nW: Use your sword for heavy damage \U0001F5E1 this turn, you will need the Sword weapon from Tanka and Banka to activate this." << endl;
     cout << "\nS: Use your special ability this turn \U0001F3F9 Needs the Bow and arrow weapon and can only be used 3 times in one level" << endl;
     cout << "\nESC: Force Quit the Game!! \U0001F97A" << endl;
     cout << "Your turn: " << endl;
@@ -79,7 +79,18 @@ class Menu
 
   void ShowLevel2()
   {
-    
+    cout << "Starting Level 2: .......\nYou finally reach the end of the forest and see the ocean. And appears the 2 guard demons \U0001f9db Banka and \U0001f9db Danka who guard the passageway to the ocean.\n---------------------------------\nMitra: These 2 stupid demons are pawns for Ravana. They have been ordered to keep a watch at whoever tried to cross the ocean.\nThey each have a health of 80 and melee damage of 20. They can randomly either defend or attack you each turn!!\nThey have no special ability so should be easy to kill!!\nYou will receive the sword for heavy damage if you can kill them!" << endl;
+    sleep(2);
+    cout << "Banka: \U0001F5e3 Well Hello there, seems like someone wants to cross the ocean..\nDanka: Haha, many have tried before but failed. Turn back or else we will make pieces of you and feed the fishes with it.\n" << endl;
+    sleep(2);
+  }
+
+  void ShowLevel3()
+  {
+    cout << "Starting Level 3: .......\nMitra: Glad that both the stupid demons are dead. Thank you. In return, I will give you this boat to help you cross the ocean. Also your health, healing value and damage has increased. Consider this a blessing from the Forest animals.\nYou start the journey through the ocean. And just when you are in the middle of it,  3 water demons appear \U0001f9db Marichi \U0001f9db Danava and \U0001f9db Dhadhichi who live in these waters.\n---------------------------------\nMitra: These demons kill any humans who try to cross this ocean and eat them for lunch.\nThey each have a health of 100 and melee damage of 20. They can randomly either defend or attack you each turn!!\nThey have no special ability !\nYou will receive the Shield for heavy damage if you can kill them!" << endl;
+    sleep(2);
+    cout << "Danava: \U0001F5e3 He who tried to cross this ocean shall die in vain..\nDhadhichi: Haha, we shall kill you and eat you.\n" << endl;
+    sleep(2);
   }
 
 };

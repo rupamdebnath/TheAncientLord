@@ -3,18 +3,6 @@
 //#include "/home/runner/TheAncientLord/include/Menu.hpp"
 using namespace std;
 
-//writing a randoim function for the abilities of characters
-int random(int min, int max) //range : [min, max]
-{
-  bool first = true;
-  if (first) 
-  {  
-    srand(time(NULL)); //seeding for the first time only!
-    first = false;
-  }
-  int _value = min + rand() % (( max + 1 ) - min);
-  return _value;
-}
 
 //The Base class Player from which all the other characters will be inherited
 class Player
@@ -111,9 +99,9 @@ class Player
   }
 
   //Enemy AI makes their turn
-  void AITurn(Player *player2)
+  void AITurn(Player *player2, int selectionMax)
   {
-    int rand = random(1,3);
+    int rand = random(1,selectionMax);
     switch(rand)
     {
       case 1:
@@ -132,6 +120,8 @@ class Player
   }
   //virtual functions for different abilities based on characters
   virtual void Reset() = 0;
+  virtual void LevelUp(int health, int mDamage, int rDamage, int shield) = 0;
+  //virtual void RangedAttack(Player *player) = 0;
   virtual void SpecialAbility() = 0;
   virtual void SpecialAbility(Player *player) = 0;
   //virtual void Heal() = 0;
@@ -154,6 +144,13 @@ class Hero : public Player
   {
     health = 150;
   }
+  void LevelUp(int health, int mDamage, int rDamage, int shield)
+  {
+    this->health = health;
+    this->mDamage = mDamage;
+    this->rDamage = rDamage;
+    this->shield = shield;
+  }
   void SpecialAbility(){}
   void SpecialAbility(Player *player)
   {
@@ -166,19 +163,25 @@ class Hero : public Player
 class Rakshasa : public Player
 {
   public:
-  Rakshasa(string name)
+  Rakshasa(string name, int shieldMax, int health, int mDamage)
   {
-    health = 80;
-    mDamage = 10;
+    this->health = 80;
+    this->mDamage = 20;
+    shield = random(7, shieldMax);
     this->name = name;
+  }
+  ~Rakshasa()
+  {
+    cout << name << " is dead." << endl;
   }
   void Reset()
   {
     health = 80;
+    shield = random(7, 15);
   }
   void SpecialAbility(){}
   void SpecialAbility(Player *player){}
-
+  virtual void LevelUp(int health, int mDamage, int rDamage, int shield){}
 };
 
 class Tataka : public Player
@@ -189,12 +192,13 @@ class Tataka : public Player
     health = 100;
     mDamage = 35;
     rDamage = 0;
-    shield = random(0, 10);
+    shield = random(5, 10);
     this->name = name;
   }
   void Reset()
   {
     health = 100;
+    shield = random(5, 10);
   }
   void SpecialAbility()
   {
@@ -203,11 +207,11 @@ class Tataka : public Player
     Heal(rand);
   }
   void SpecialAbility(Player *player){}
-
+  virtual void LevelUp(int health, int mDamage, int rDamage, int shield){}
   ~Tataka()
   {
     cout << "Congratulations, You have successfully killed Tataka!!" << endl;
-    cout << "You have received the boomerang weapon now, you can use this as a ranged weapon, there is a 50% probability that your opponent will miss next turn." << endl;
+    cout << "You have received the Map of Lanka." << endl;
   }
 
 };
