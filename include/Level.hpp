@@ -1,8 +1,8 @@
 #include <iostream>
 // #include "/home/runner/TheAncientLord/include/Player.hpp"
 // #include "/home/runner/TheAncientLord/include/Menu.hpp"
-#include <Player.hpp>
-#include <Menu.hpp>
+#include <home/Player.hpp>
+#include <home/Menu.hpp>
 
 //writing a randoim function for the abilities of characters
 int random(int min, int max) //range : [min, max]
